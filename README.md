@@ -60,7 +60,6 @@ The frame is split into three parts so each fits on a standard print bed:
 - **pi_bracket.stl** — small mount plate for the Pi + HAT, clips inside the back shell
 <img width="623" height="192" alt="Pi_Bracket" src="https://github.com/user-attachments/assets/c7741e9b-48fd-4914-a58e-b0cb31bb8fa2" />
 
-Print in black PETG, 0.2 mm layers, 25% infill, 4 perimeter walls. Supports only needed on frame_front. Total filament around 230g.
 
 The mirror sheet sits in the lip with no adhesive — it's held by gravity and the frame. Don't glue it; you'll want to be able to remove it.
 
