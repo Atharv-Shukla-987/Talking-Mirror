@@ -1,2 +1,80 @@
 # Talking Mirror
 
+A voice-activated smart mirror that talks back — and not always nicely. Built around a Raspberry Pi Zero 2 W, a two-way acrylic mirror, and a stack of cloud APIs, it wakes up on a keyword, listens to what you say, and replies with a dry sarcastic response through a small speaker. The display shows a minimal animated face that moves when it talks.
+
+The whole thing runs off a single USB power brick and mounts on a wall like a normal mirror. When idle, the screen is off and it just looks like a mirror.
+
+---
+
+
+
+---
+
+
+## Hardware
+
+| Part | Purpose |
+|------|---------|
+| Raspberry Pi Zero 2 W | Main board — runs everything |
+| MicroSD card 32GB | OS and code storage |
+| ReSpeaker 2-Mic Pi HAT | Dual microphones, speaker amp, RGB LEDs, and a button — all in one board that stacks directly on the Pi GPIO |
+| HP LA2205wg 22" monitor | Display behind the mirror |
+| SupremeTech 12×24" two-way acrylic mirror | Reflective from the front, transparent from the back so the screen shows through |
+| 8Ω 3W speaker (JST connector) | Plugs straight into the ReSpeaker HAT |
+| 5V 3A USB power supply | Powers the Pi via micro-USB |
+| 3D printed frame | Holds the mirror and monitor together — STL files in CAD/Frame_stl/ |
+| M2.5 standoffs (×4) | Mounts the Pi + HAT stack inside the frame |
+| M4 heat-set inserts (×3) + screws | Joins the frame front and back shell |
+| Mini-HDMI to HDMI cable | Pi Zero uses mini-HDMI |
+
+The monitor has its own power cable separately. Everything else runs off one USB charger.
+
+---
+## Connections
+This is insanely simple .
+
+<img width="767" height="507" alt="Schematics" src="https://github.com/user-attachments/assets/9d92d7d4-5462-4abb-85b8-8ec7e4877f1a" />
+
+  
+## How it works
+
+The Pi sits behind the monitor inside the 3D printed frame. When you say the wake word ("computer" by default), the ReSpeaker mics pick it up, Porcupine detects it locally, and the mirror wakes up. It records what you say until you stop talking, sends the audio to OpenAI Whisper for transcription, passes the text to GPT-4o-mini with a sarcastic personality prompt, gets a reply, converts it to speech via ElevenLabs, and plays it back through the speaker. The animated face on screen moves while it talks.
+
+The three RGB LEDs on the ReSpeaker HAT act as a status ring — dim blue when idle, green while listening, orange while thinking, purple while talking.
+
+All the heavy AI work (transcription, language model, voice synthesis) happens in the cloud so the Pi Zero doesn't need to do any local inference.
+
+---
+
+
+## 3D printed frame
+
+The frame is split into three parts so each fits on a standard print bed:
+
+- **frame_front.stl** — the visible part, 560 × 390 mm, with a 3 mm lip that holds the mirror sheet
+<img width="1202" height="364" alt="Frame_Front" src="https://github.com/user-attachments/assets/d84a2085-e547-4d21-b947-d761653c3cdf" />
+
+- **back_shell.stl** — rear enclosure with vent slots and a cable exit at the bottom
+- <img width="1197" height="293" alt="Back_Shell" src="https://github.com/user-attachments/assets/b323003b-7b9d-4767-8111-796dab1f18e3" />
+
+- **pi_bracket.stl** — small mount plate for the Pi + HAT, clips inside the back shell
+<img width="623" height="192" alt="Pi_Bracket" src="https://github.com/user-attachments/assets/c7741e9b-48fd-4914-a58e-b0cb31bb8fa2" />
+
+Print in black PETG, 0.2 mm layers, 25% infill, 4 perimeter walls. Supports only needed on frame_front. Total filament around 230g.
+
+The mirror sheet sits in the lip with no adhesive — it's held by gravity and the frame. Don't glue it; you'll want to be able to remove it.
+
+
+
+## Known issues / things to improve
+
+- Pi Zero 2 W gets warm after extended use — the back shell has vent slots but no active cooling
+- ElevenLabs free tier runs out fast if you talk to it a lot
+- Wake word "computer" has occasional false positives — you can swap it for a custom keyword in config.py using a Porcupine custom model
+- The face animation is deliberately minimal; it doesn't lip-sync to phonemes, just opens and closes
+
+---
+
+## License
+
+MIT
