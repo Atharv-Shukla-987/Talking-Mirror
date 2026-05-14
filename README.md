@@ -61,6 +61,9 @@ The frame is split into two parts :
 
 
 The mirror sheet sits in the lip with no adhesive — it's held by gravity and the frame. Don't glue it; you'll want to be able to remove it.
+### Asssembled Frame
+
+<img width="1008" height="497" alt="Assembled" src="https://github.com/user-attachments/assets/a09e54ac-f7a6-4926-af91-e1ae9dfa2aca" />
 
 ## BOM
 
