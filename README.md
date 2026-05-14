@@ -63,6 +63,9 @@ The frame is split into three parts so each fits on a standard print bed:
 
 The mirror sheet sits in the lip with no adhesive — it's held by gravity and the frame. Don't glue it; you'll want to be able to remove it.
 
+## BOM
+
+<img width="1358" height="243" alt="Bom" src="https://github.com/user-attachments/assets/45111de8-bb00-4f32-9292-17fb9a0a6131" />
 
 
 ## Known issues / things to improve
