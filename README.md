@@ -49,8 +49,7 @@ All the heavy AI work (transcription, language model, voice synthesis) happens i
 
 ## 3D printed frame
 
-The frame is split into three parts so each fits on a standard print bed:
-
+The frame is split into two parts :
 
 ### Front Frame 
 
