@@ -51,14 +51,14 @@ All the heavy AI work (transcription, language model, voice synthesis) happens i
 
 The frame is split into three parts so each fits on a standard print bed:
 
-- **frame_front.stl** — the visible part, 560 × 390 mm, with a 3 mm lip that holds the mirror sheet
-<img width="1202" height="364" alt="Frame_Front" src="https://github.com/user-attachments/assets/d84a2085-e547-4d21-b947-d761653c3cdf" />
 
-- **back_shell.stl** — rear enclosure with vent slots and a cable exit at the bottom
-- <img width="1197" height="293" alt="Back_Shell" src="https://github.com/user-attachments/assets/b323003b-7b9d-4767-8111-796dab1f18e3" />
+### Front Frame 
 
-- **pi_bracket.stl** — small mount plate for the Pi + HAT, clips inside the back shell
-<img width="623" height="192" alt="Pi_Bracket" src="https://github.com/user-attachments/assets/c7741e9b-48fd-4914-a58e-b0cb31bb8fa2" />
+<img width="846" height="453" alt="Frame_Front" src="https://github.com/user-attachments/assets/9f3db3a1-2585-4d74-a8be-3984f8b38962" />
+
+### Back Frame
+
+<img width="1104" height="531" alt="Frame_Back" src="https://github.com/user-attachments/assets/28d1f02d-001c-4166-a834-c57a396a6797" />
 
 
 The mirror sheet sits in the lip with no adhesive — it's held by gravity and the frame. Don't glue it; you'll want to be able to remove it.
